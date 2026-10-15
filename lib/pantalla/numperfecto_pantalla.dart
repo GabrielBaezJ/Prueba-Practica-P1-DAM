@@ -38,7 +38,7 @@ class _NumperfectoPantallaState extends State<NumperfectoPantalla> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Ejercicio 4: Números perfectos'),
+        title: Text('Ejercicio 4: Números perfectos'),
         backgroundColor: Colors.blue,
       ),
       body: Padding(
@@ -48,34 +48,28 @@ class _NumperfectoPantallaState extends State<NumperfectoPantalla> {
             TextField(
               controller: numeroController,
               keyboardType: TextInputType.number,
-              decoration: const InputDecoration(
+              decoration: InputDecoration(
                 labelText: 'Ingrese un número entero positivo',
                 border: OutlineInputBorder(),
               ),
             ),
-            const SizedBox(height: 10),
+            SizedBox(height: 10),
             Wrap(
               spacing: 10,
               children: [
-                ElevatedButton(
-                  onPressed: verificar,
-                  child: const Text('Verificar'),
-                ),
-                ElevatedButton(
-                  onPressed: limpiar,
-                  child: const Text('Limpiar'),
-                ),
+                ElevatedButton(onPressed: verificar, child: Text('Verificar')),
+                ElevatedButton(onPressed: limpiar, child: Text('Limpiar')),
               ],
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: 20),
             Text(
               resultado,
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
             ),
-            const Spacer(),
+            Spacer(),
             ElevatedButton(
               onPressed: () => Navigator.pop(context),
-              child: const Text('Volver al menú'),
+              child: Text('Volver al menú'),
             ),
           ],
         ),

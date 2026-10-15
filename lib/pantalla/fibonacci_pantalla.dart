@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../logica/fibonacci_logica.dart';
 
 class FibonacciPantalla extends StatefulWidget {
-  const FibonacciPantalla({super.key});
+  FibonacciPantalla({super.key});
 
   @override
   State<FibonacciPantalla> createState() => _FibonacciPantallaState();
@@ -40,37 +40,31 @@ class _FibonacciPantallaState extends State<FibonacciPantalla> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Ejercicio 5: Serie de Fibonacci'),
+        title: Text('Ejercicio 5: Serie de Fibonacci'),
         backgroundColor: Colors.blue,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16),
         child: Column(
           children: [
             TextField(
               controller: numeroController,
               keyboardType: TextInputType.number,
-              decoration: const InputDecoration(
+              decoration: InputDecoration(
                 labelText: 'Cantidad de términos (N)',
                 border: OutlineInputBorder(),
               ),
             ),
-            const SizedBox(height: 10),
+            SizedBox(height: 10),
             Wrap(
               spacing: 10,
               children: [
-                ElevatedButton(
-                  onPressed: generar,
-                  child: const Text('Generar'),
-                ),
-                ElevatedButton(
-                  onPressed: limpiar,
-                  child: const Text('Limpiar'),
-                ),
+                ElevatedButton(onPressed: generar, child: Text('Generar')),
+                ElevatedButton(onPressed: limpiar, child: Text('Limpiar')),
               ],
             ),
-            Text(mensaje, style: const TextStyle(color: Colors.red)),
-            const SizedBox(height: 10),
+            Text(mensaje, style: TextStyle(color: Colors.red)),
+            SizedBox(height: 10),
             Expanded(
               child: ListView.builder(
                 itemCount: serie.length,
@@ -81,7 +75,7 @@ class _FibonacciPantallaState extends State<FibonacciPantalla> {
             ),
             ElevatedButton(
               onPressed: () => Navigator.pop(context),
-              child: const Text('Volver al menú'),
+              child: Text('Volver al menú'),
             ),
           ],
         ),

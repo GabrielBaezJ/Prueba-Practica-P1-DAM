@@ -5,61 +5,57 @@ import 'fibonacci_pantalla.dart';
 import 'armstrong_pantalla.dart';
 
 class MenuPrincipal extends StatelessWidget {
-  const MenuPrincipal({super.key});
+  MenuPrincipal({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Menú Principal - Práctica'),
+        title: Text('Menú Principal - Práctica'),
         backgroundColor: Colors.blue,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
+            Text(
               'Seleccione un ejercicio:',
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 30),
+            SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const NumperfectoPantalla(),
+                    builder: (context) => NumperfectoPantalla(),
                   ),
                 );
               },
-              child: const Text('Ejercicio 4: Números perfectos'),
+              child: Text('Ejercicio 4: Números perfectos'),
             ),
-            const SizedBox(height: 15),
+            SizedBox(height: 15),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                    builder: (context) => const FibonacciPantalla(),
-                  ),
+                  MaterialPageRoute(builder: (context) => FibonacciPantalla()),
                 );
               },
-              child: const Text('Ejercicio 5: Serie de Fibonacci'),
+              child: Text('Ejercicio 5: Serie de Fibonacci'),
             ),
-            const SizedBox(height: 15),
+            SizedBox(height: 15),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                    builder: (context) => const ArmstrongPantalla(),
-                  ),
+                  MaterialPageRoute(builder: (context) => ArmstrongPantalla()),
                 );
               },
-              child: const Text('Ejercicio 6: Número Armstrong'),
+              child: Text('Ejercicio 6: Número Armstrong'),
             ),
           ],
         ),
